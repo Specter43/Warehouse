@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "inputShippers",
+      "databasename":"WarehouseDB",
+      "collectionName":"WarehouseDBContainer",
+      "createIfNotExists":false,
+      "connectionStringSetting":"DBConnecto",
+      "direction": "in",
+      "sqlQuery":"SELECT c.ShipperID FROM c"
+    }
+  ]
+}

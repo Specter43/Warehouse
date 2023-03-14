@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "inputDoc",
+      "databasename":"WarehouseDB",
+      "collectionName":"WarehouseDBContainer",
+      "createIfNotExists":false,
+      "connectionStringSetting":"DBConnecto",
+      "direction": "out"
+    }
+  ]
+}
